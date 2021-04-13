@@ -102,6 +102,7 @@ body {
 }
 
 .form button {
+  text-align: center;
   background-color: #8e44ad;
   border: 2px solid #8e44ad;
   border-radius: 4px;

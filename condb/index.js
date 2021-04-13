@@ -4,7 +4,7 @@ var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 
 var mongo_uri =
-  "mongodb+srv://root:12345@therest.ltsjd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  "mongodb+srv://root:12345@therest.ltsjd.mongodb.net/restaurant?retryWrites=true&w=majority";
 mongoose.Promise = global.Promise;
 mongoose.connect(mongo_uri, { useNewUrlParser: true }).then(
   () => {

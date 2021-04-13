@@ -2,11 +2,17 @@ const form = document.getElementById("form");
 const username = document.getElementById("username");
 const password = document.getElementById("password");
 const password2 = document.getElementById("password2");
+let url = "http://localhost:3000/api/memberList_item";
 
+require("");
 form.addEventListener("submit", (e) => {
+  console.log(username.value);
+  console.log(password.value);
+
   e.preventDefault();
   if (checkInputs()) {
-    //เอารหัสลงฐานข้อมูล
+    //////////
+    /////////
   }
 });
 
@@ -53,3 +59,4 @@ function setSuccessFor(input) {
   formControl.className = "form-control success";
   return true;
 }
+//for include
