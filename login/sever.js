@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 app.set("view engine", "html");
 app.engine("html", require("ejs").renderFile);
-
+app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect(
@@ -26,6 +26,10 @@ const Member = mongoose.model("Member", memberSchema);
 let url = "/login.html";
 let id = "";
 let checker = ""; // for check username in mongodb - for register
+
+app.get("/public", function (req, res) {
+  console.log("Xx");
+});
 
 app.get("/", function (req, res) {
   // console.log("xxxxxxxxxxxxxxxxxxxx" + req.body.regis + "ss");
@@ -84,7 +88,7 @@ app.post("/", function (req, res) {
             username: req.body.username,
             password: req.body.password,
           });
-          // NewMem.save();
+          NewMem.save();
         }
         console.log(checker + " <<");
         res.redirect("/");
@@ -103,7 +107,7 @@ app.post("/", function (req, res) {
             // console.log("ww");
             id = req.body.username;
             // console.log(id + " << id");
-            url = "/shop.ejs";
+            url = "/public/index.ejs";
 
             break;
           } else {
