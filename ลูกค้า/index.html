@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Mastery</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="./assets/styles99.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+  </head>
+  <body>
+
+    
+    <div id="app">
+     
+      <a href="cart.html"><div class="cart">Cart({{ cart.length }})</div></a>
+<center><img src="./assets/images/all.jpg" style="margin-left: 5%;" ></center>
+   
+      <bubletea 
+        :premium="premium" 
+        @add-to-cart="updateCart"
+        @remove-from-cart="removeById"> <!-- solution -->
+      </bubletea>
+   
+      <rice
+        :premium="premium" 
+        @add-to-cart="updateCart"
+        @remove-from-cart="removeById"> <!-- solution -->
+      </rice>
+
+      <noodle 
+        :premium="premium" 
+        @add-to-cart="updateCart"
+        @remove-from-cart="removeById"> <!-- solution -->
+      </noodle >
+
+      <showcart><div class="cart">Cart({{ cart }})</div></showcart>
+ </div>
+     
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+
+    <!-- Import Components -->
+    <script src="./components/ProductDisplay.js"></script>
+
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
+  </body>
+</html>
