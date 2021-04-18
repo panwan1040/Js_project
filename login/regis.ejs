@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <base href="/" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -128,6 +127,7 @@
     <title>สมัคร</title>
   </head>
   <body>
+    <input type="hidden" id="checker" value="<%= checker %>" />
     <div class="container">
       <div class="header">
         <h2>Create Account</h2>
@@ -168,10 +168,14 @@
           />
         </div>
         <button name="submit">Submit</button>
-
-        <!-- <input type="submit" value="Submit" /> -->
       </form>
       <script type="text/javascript">
+        let checker = document.getElementById("checker").value;
+        console.log("checker > " + checker);
+        if (checker == "fail") {
+          console.log(checker + " < say");
+          alert("fail this username has already been taken");
+        }
         function validateMyForm() {
           if (document.getElementById("username").value + "".trim() === "")
             return setErr("username is blank");
@@ -183,7 +187,6 @@
           )
             return setErr("password is not match");
 
-          alert("register complete");
           //location.href = "login.htm";
           return true;
         }

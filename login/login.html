@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
     <style>
       @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
       @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap");
@@ -107,12 +108,7 @@
       <form id="form" class="form" method="POST" action="/">
         <div class="form-control">
           <label for="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            placeholder="scooter_xd"
-            id="username"
-          />
+          <input type="text" name="username" placeholder="scooter_xd" id="id" />
         </div>
 
         <div class="form-control">
@@ -127,6 +123,7 @@
 
         <button name="submit" value="yes">Submit</button>
         <input
+          id="log"
           type="submit"
           name="regis"
           style="border: 0; background-color: white"
@@ -136,5 +133,10 @@
         <!-- <input type="submit" value="Submit" /> -->
       </form>
     </div>
+    <script>
+      if (document.getElementById("id").value == "log")
+        console.log("xxxxxxxxxxxxxxxx");
+      console.log(document.getElementById("id").value + " <<<< user name");
+    </script>
   </body>
 </html>

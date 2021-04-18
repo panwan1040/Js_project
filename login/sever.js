@@ -1,7 +1,11 @@
 const express = require("express");
 const app = express();
+const ejs = require("ejs");
+const path = require("path");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+app.set("view engine", "html");
+app.engine("html", require("ejs").renderFile);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -20,24 +24,29 @@ const memberSchema = {
 const Member = mongoose.model("Member", memberSchema);
 
 let url = "/login.html";
+let id = "";
+let checker = ""; // for check username in mongodb - for register
 
 app.get("/", function (req, res) {
   // console.log("xxxxxxxxxxxxxxxxxxxx" + req.body.regis + "ss");
   if (req.body.regis) {
-    url = "/regis.html";
+    url = "/regis.ejs";
+    console.log("regis");
     // res.redirect("/regis.html");
-    res.sendFile(__dirname + url);
+    res.render(__dirname + url, { checker: checker });
   } else {
-    res.sendFile(__dirname + url); //login
+    res.render(__dirname + url, { id: id, checker: checker }); //login
   }
 });
 
 //post
 app.post("/", function (req, res) {
-  if (req.body.regis) url = "/regis.html"; // จากล็อกอินฟอร์ม
-
+  if (req.body.regis) {
+    url = "/regis.ejs";
+  } // จากล็อกอินฟอร์ม
+  //////////////////////////////
   //for register
-  if (url == "/regis.html") {
+  if (url == "/regis.ejs") {
     if (req.body.username + "".trim() === "") {
       //console.log("wrong");
       res.redirect("/");
@@ -48,14 +57,38 @@ app.post("/", function (req, res) {
       res.redirect("/");
       //console.log("wrong");
     } else {
-      //console.log("save");
-      let NewMem = new Member({
-        username: req.body.username,
-        password: req.body.password,
-      });
-      // NewMem.save();
-      url = "/login.html";
-      res.redirect("/");
+      run();
+      checker = "";
+      async function run() {
+        await Member.find(async function (err, data) {
+          for await (const key of data) {
+            // console.log(key.username);
+            if (req.body.username === key.username) {
+              console.log(key.username + " <<");
+              checker = "fail";
+              console.log(checker + " 1");
+              // console.log(url);
+              break;
+            }
+          }
+        });
+
+        console.log(" 2 jaaaa");
+
+        console.log(checker);
+        if (checker !== "fail") {
+          console.log(checker + " 3 not fail");
+          url = "/login.html";
+          console.log("save");
+          let NewMem = new Member({
+            username: req.body.username,
+            password: req.body.password,
+          });
+          // NewMem.save();
+        }
+        console.log(checker + " <<");
+        res.redirect("/");
+      }
     }
   } else {
     console.log("login");
@@ -67,8 +100,10 @@ app.post("/", function (req, res) {
       for (const key of data) {
         if (req.body.username === key.username)
           if (req.body.password === key.password) {
-            console.log("ww");
-            url = "/shop.html";
+            // console.log("ww");
+            id = req.body.username;
+            // console.log(id + " << id");
+            url = "/shop.ejs";
 
             break;
           } else {
