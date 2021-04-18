@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\..\\AppServ\\www\\tes"
+		},
+		{
+			"path": "..\\..\\..\\..\\AppServ\\www\\rty"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "tes"
+	}
+}
