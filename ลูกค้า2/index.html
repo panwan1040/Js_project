@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Mastery</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="./assets/styles99.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+  </head>
+  <body>
+
+    
+    <div id="app">
+      
+     
+      <a href="cart.html"><div class="cart">Cart({{ cart.length }})</div></a>
+<center><img src="./assets/images/hh.jpg" style="margin-left: 5%;" ></center>
+   
+      <bubletea 
+        :stocker="stocker" 
+        @add-to-cart="updateCart"
+        @remove-from-cart="removeById"> <!-- solution -->
+      </bubletea>
+   
+      <rice
+        :stocker="stocker" 
+        @add-to-cart="updateCart"
+        @remove-from-cart="removeById"> <!-- solution -->
+      </rice>
+
+      <noodle 
+        :stocker="stocker" 
+        @add-to-cart="updateCart"
+        @add-to-price="updateCart"
+        @remove-from-cart="removeById"
+        @remove-from-price="removeById">
+         <!-- solution -->
+      </noodle >
+
+     
+      <div class="cart2"> <center><h2>รายการอาหารที่สั่ง</h2></center><br/>
+        
+      <div width="20%" v-for="(item, index) in cart">
+
+          
+         <h2 style="float: right auto;">{{ item+" " }}  {{ priced[0] }}บาท</h2> 
+        </div>
+      </div>
+    </div>
+
+ </div>
+     
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+
+    <!-- Import Components -->
+    <script src="./components/ProductDisplay.js"></script>
+
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
+  </body>
+</html>
