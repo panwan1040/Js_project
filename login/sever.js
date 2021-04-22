@@ -20,16 +20,21 @@ const memberSchema = {
   username: String,
   password: String,
 };
+const orderSchema = {
+  orders: [],
+};
 
 const Member = mongoose.model("Member", memberSchema);
+const Order = mongoose.model("Order", orderSchema);
 
 let url = "/login.html";
 let id = "";
 let checker = ""; // for check username in mongodb - for register
 
-app.get("/public", function (req, res) {
-  console.log("Xx");
-});
+// app.get("/confrim", function (req, res) {
+
+//   res.redirect("/");
+// });
 
 app.get("/", function (req, res) {
   // console.log("xxxxxxxxxxxxxxxxxxxx" + req.body.regis + "ss");
@@ -47,7 +52,8 @@ app.get("/", function (req, res) {
 app.post("/", function (req, res) {
   if (req.body.regis) {
     url = "/regis.ejs";
-  } // จากล็อกอินฟอร์ม
+  }
+  // จากล็อกอินฟอร์ม
   //////////////////////////////
   //for register
   if (url == "/regis.ejs") {
@@ -95,30 +101,44 @@ app.post("/", function (req, res) {
       }
     }
   } else {
-    console.log("login");
-    /////////////// for login
-    //ตรวจรหัส
-    //เปลี่ยนไปหน้าร้านค้า
-    Member.find(function (err, data) {
-      // if (err) return console.error(err);
-      for (const key of data) {
-        if (req.body.username === key.username)
-          if (req.body.password === key.password) {
-            // console.log("ww");
-            id = req.body.username;
-            // console.log(id + " << id");
-            url = "/public/index.ejs";
+    //if (url == "/login.html")
+    console.log(req.body.addToDB);
 
-            break;
-          } else {
-            console.log("password wrong jaa");
-            break;
-          }
-        else {
-        }
-      }
+    if (req.body.addToDB) {
+      console.log("can");
+      console.log(req.body.order);
+      url = "/public/index.ejs";
       res.redirect("/");
-    });
+      let Neworder = new Order({
+        orders: req.body.order,
+      });
+      //Neworder.save();
+    } else {
+      /////////////// for login
+      //ตรวจรหัส
+      //เปลี่ยนไปหน้าร้านค้า
+      console.log("login");
+      Member.find(function (err, data) {
+        // if (err) return console.error(err);
+        for (const key of data) {
+          if (req.body.username === key.username)
+            if (req.body.password === key.password) {
+              // console.log("ww");
+              id = req.body.username;
+              // console.log(id + " << id");
+              url = "/public/index.ejs";
+
+              break;
+            } else {
+              console.log("password wrong jaa");
+              break;
+            }
+          else {
+          }
+        }
+        res.redirect("/");
+      });
+    }
   }
 });
 
