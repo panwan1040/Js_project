@@ -96,8 +96,19 @@
         </div>
 
         <!-- button -->
-
-        <test2></test2>
+        <form action="/" method="post">
+          <!-- {{orderStr = cart + "" }} -->
+          <input type="hidden" name="order" :value="toStr" />
+          <input type="hidden" name="orderByUser" value="<%= id %>" />
+          <button
+            type="submit"
+            name="addToDB"
+            value="addToDB"
+            class="btn btn-success"
+          >
+            Success
+          </button>
+        </form>
       </center>
       <!-- Import App -->
       <script src="/main.js"></script>

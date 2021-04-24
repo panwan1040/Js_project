@@ -3,7 +3,8 @@ app.component("test2", {
     /*html*/
     `<p> testttttt:::</p>
              <form action="/" method="post">
-                <input type="hidden" name="order" value="cart" />
+            {{cart}}<<<<<<<<
+                <input type="hidden" name="order" :value="{cart:[]}" />
                 <button
                 type="submit"
                 name="addToDB"

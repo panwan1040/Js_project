@@ -5,6 +5,7 @@ const app = Vue.createApp({
       priced: [],
       cart: [],
       stocker: true,
+      orderStr: "",
     };
   },
   methods: {
@@ -23,5 +24,10 @@ const app = Vue.createApp({
     },
 
     // solution
+  },
+  computed: {
+    toStr() {
+      return (this.orderStr = JSON.stringify(this.cart));
+    },
   },
 });

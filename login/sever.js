@@ -21,7 +21,7 @@ const memberSchema = {
   password: String,
 };
 const orderSchema = {
-  orders: [],
+  orders: String,
 };
 
 const Member = mongoose.model("Member", memberSchema);
@@ -107,12 +107,13 @@ app.post("/", function (req, res) {
     if (req.body.addToDB) {
       console.log("can");
       console.log(req.body.order);
+      console.log(req.body.orderByUser);
       url = "/public/index.ejs";
       res.redirect("/");
       let Neworder = new Order({
-        orders: req.body.order,
+        orders: req.body.order + "+" + req.body.orderByUser,
       });
-      //Neworder.save();
+      Neworder.save();
     } else {
       /////////////// for login
       //ตรวจรหัส
