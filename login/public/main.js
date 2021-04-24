@@ -29,5 +29,8 @@ const app = Vue.createApp({
     toStr() {
       return (this.orderStr = JSON.stringify(this.cart));
     },
+    getsum() {
+      return this.sum;
+    },
   },
 });

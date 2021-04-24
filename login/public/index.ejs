@@ -99,6 +99,7 @@
         <form action="/" method="post">
           <!-- {{orderStr = cart + "" }} -->
           <input type="hidden" name="order" :value="toStr" />
+          <input type="hidden" name="orderTotal" :value="getsum" />
           <input type="hidden" name="orderByUser" value="<%= id %>" />
           <button
             type="submit"

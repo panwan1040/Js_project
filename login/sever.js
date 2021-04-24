@@ -22,6 +22,8 @@ const memberSchema = {
 };
 const orderSchema = {
   orders: String,
+  user: String,
+  price: String,
 };
 
 const Member = mongoose.model("Member", memberSchema);
@@ -108,10 +110,13 @@ app.post("/", function (req, res) {
       console.log("can");
       console.log(req.body.order);
       console.log(req.body.orderByUser);
+      console.log(req.body.orderTotal);
       url = "/public/index.ejs";
       res.redirect("/");
       let Neworder = new Order({
-        orders: req.body.order + "+" + req.body.orderByUser,
+        orders: req.body.order,
+        user: req.body.orderByUser,
+        price: req.body.orderTotal,
       });
       Neworder.save();
     } else {
