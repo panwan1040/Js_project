@@ -126,10 +126,12 @@
             <div style="float: left">รวม : </div>
             <div style="float: right">   {{ sum }} บาท</div>
           </h4>
+          
         </div>
 
         <!-- button -->
         <form action="/" method="post">
+          
           <!-- {{orderStr = cart + "" }} -->
           <input type="hidden" name="order" :value="toStr" />
           <input type="hidden" name="orderTotal" :value="getsum" />
@@ -160,7 +162,7 @@
       </script>
     </div>
   </body>
-<br/>
-<br/>
-<br/>
+
+
+  <br/>
 </html>
