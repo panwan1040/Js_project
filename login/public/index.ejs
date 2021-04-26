@@ -101,11 +101,19 @@
           <input type="hidden" name="order" :value="toStr" />
           <input type="hidden" name="orderTotal" :value="getsum" />
           <input type="hidden" name="orderByUser" value="<%= id %>" />
+          <div style="width: 400px">
+            <h3>เบอร์โทร</h3>
+            <input type="tel" name="orderContact" />
+            <h3>รายละเอียดเพิ่มเติม</h3>
+            <input type="text" name="orderComment" />
+          </div>
+          <br />
           <button
             type="submit"
             name="addToDB"
             value="addToDB"
             class="btn btn-success"
+            :disabled="cart.length > 0 ?disabled  :'' "
           >
             Success
           </button>
