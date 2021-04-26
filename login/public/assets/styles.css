@@ -7,15 +7,29 @@ body {
   color: #282828;
 }
 
-.button {
+.button-add {
   margin: 30px;
-  background-color: #39495c;
+  background-color: #42fc4c;
   border-radius: 5px;
   font-size: 18px;
   width: 160px;
   height: 60px;
   color: white;
-  padding: 20px;
+  box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+  text-align: center;
+  cursor: pointer;
+}
+
+.button-re {
+  margin: 30px;
+  background-color: #ff493c;
+  border-radius: 5px;
+  font-size: 18px;
+  width: 160px;
+  height: 60px;
+  color: white;
   box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
     inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
     inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
@@ -46,7 +60,7 @@ body {
 }
 
 .color-circle {
-  background-size: 100% auto;
+  background-size: 100% 100% ;
   width: 50px;
   height: 50px;
   margin-top: 8px;
@@ -60,22 +74,26 @@ body {
 }
 
 h1 {
+  color:white;
   font-size: 50px;
 }
 
 h3 {
+  color:white;
   font-size: 25px;
 }
 
 img {
   border: 2px solid #d8d8d8;
-  width: 70%;
+  width:450px;
+  height:450px;
   margin: 40px;
   padding: 15px;
   -webkit-box-shadow: 0px 2px 15px -12px rgba(0, 0, 0, 0.57);
   -moz-box-shadow: 0px 2px 15px -12px rgba(0, 0, 0, 0.57);
   box-shadow: 2px 15px -12px rgba(0, 0, 0, 0.57);
 }
+
 
 input {
   width: 100%;
@@ -88,7 +106,7 @@ label {
   margin-bottom: 5px;
 }
 
-li {
+li {color:white;
   font-size: 18px;
 }
 
@@ -106,6 +124,7 @@ li {
 }
 
 p {
+  color:white;
   font-size: 22px;
 }
 
@@ -124,6 +143,7 @@ p {
 .product-image,
 .product-info {
   width: 40%;
+  
 }
 
 .review-form {
@@ -204,3 +224,6 @@ ul {
   -moz-box-shadow: 0px 2px 15px -12px rgba(0, 0, 0, 0.57);
   box-shadow: 2px 15px -12px rgba(0, 0, 0, 0.57);
 }
+
+
+
