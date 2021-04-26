@@ -3,8 +3,25 @@
     "body-parser": "^1.19.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "fs": "*",
-    "mongoose": "^5.12.4",
+    "fs": "0.0.2",
+    "mongoose": "^5.12.5",
     "pug": "^3.0.2"
-  }
+  },
+  "name": "js_project-1",
+  "version": "1.0.0",
+  "main": "ProductDisplay.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/panwan1040/Js_project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/panwan1040/Js_project/issues"
+  },
+  "homepage": "https://github.com/panwan1040/Js_project#readme",
+  "description": ""
 }
