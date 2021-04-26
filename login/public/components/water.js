@@ -38,7 +38,7 @@ app.component("bubletea", {
 
 
         <button 
-          class="button" 
+          class="button-add" 
           :class="{ disabledButton: !inStock }" 
           :disabled="!inStock" 
           v-on:click="addToCart"
@@ -48,7 +48,7 @@ app.component("bubletea", {
 
         <!-- solution -->
         <button 
-        class="button" 
+        class="button-re" 
         :class="{ disabledButton: !inStock }" 
         :disabled="!inStock" 
         @click="removeFromCart"
@@ -65,7 +65,7 @@ app.component("bubletea", {
   data() {
     return {
       product: "tea",
-      brand: "menu",
+      brand: "Menu",
       selectedVariant: 0,
       variants: [
         {
