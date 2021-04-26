@@ -30,8 +30,8 @@
     ></script>
     <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
   </head>
-  <body style="background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%)">
-
+  <body style="background: radial-gradient(ellipse at left, #181b20 0%, #090a0f 10%, #34344d 50%,#3d3b75 80%,#34344d 100%  )">
+   
       <!-- test -->
       <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
       <div id='stars'></div>
@@ -42,25 +42,30 @@
         <!-- test -->
 
     <nav>
-      <h1  style="float: right; margin-right: 10%;color:white">สวัสดีคุณ  <%= id %></h1>
       <br />
+       <h1  style="float: right; margin-right: 10%;color:white">สวัสดีคุณ  <%= id %></h1>
       <br />
-      <br />
-    
     </nav>
     <div id="app">
       <center>
       <br />
+       
       <br />
-      <br />
-      <center><p style="font-size:80px; ">ยินดีต้อนรับ</p></center>
-      <br />
-      
     </nav>
     <div id="app">
       <center>
         <img src="/assets/images/hh.jpg" style="margin-left: 8%; height:500px;width:1200px;width: 70%;" />
       </center>
+      <center>
+        <div class="contente">
+        <div class="slider1-wrapper">
+          ร้านเรามี
+          <div class="slider1">
+              <div class="slider1-text11">ข้าว</div>
+              <div class="slider1-text21">ก๋วยเตี๋ยว</div>
+              <div class="slider1-text31">ชา</div>
+              
+            </center>
 
       <bubletea
         :stocker="stocker"
@@ -108,7 +113,7 @@
                 {{ item }}
               </div>
               <div style="float: right">
-                {{ priced[index] }}
+                {{ priced[index] }} บาท
               </div>
             </h4>
             <br />
@@ -119,21 +124,31 @@
           <br />
           <h4>
             <div style="float: left">รวม : </div>
-            <div style="float: right"> :  {{ sum }}</div>
+            <div style="float: right">   {{ sum }} บาท</div>
           </h4>
+          
         </div>
 
         <!-- button -->
         <form action="/" method="post">
+          
           <!-- {{orderStr = cart + "" }} -->
           <input type="hidden" name="order" :value="toStr" />
           <input type="hidden" name="orderTotal" :value="getsum" />
           <input type="hidden" name="orderByUser" value="<%= id %>" />
+          <div style="width: 400px">
+            <h3>เบอร์โทร</h3>
+            <input type="tel" name="orderContact" />
+            <h3>รายละเอียดเพิ่มเติม</h3>
+            <input type="text" name="orderComment" />
+          </div>
+          <br />
           <button
             type="submit"
             name="addToDB"
             value="addToDB"
             class="btn btn-success"
+            :disabled="cart.length > 0 ?disabled  :'' "
           >
             Success
           </button>
@@ -155,5 +170,7 @@
       </script>
     </div>
   </body>
-  <footer style="margin: 20%"></footer>
+
+
+  <br/>
 </html>

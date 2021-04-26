@@ -19,7 +19,7 @@ app.component("bubletea", {
         <p v-else>น้ำหมดจ้า</p>
 
         <p>เมนู : {{ shipping }}</p>
-        <p>ราคา : {{ pr }}</p>
+        <p>ราคา : {{ pr }} บาท</p>
         
 
       <table>

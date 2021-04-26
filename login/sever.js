@@ -23,6 +23,8 @@ const memberSchema = {
 const orderSchema = {
   orders: String,
   user: String,
+  comment: String,
+  contact: String,
   price: String,
 };
 
@@ -116,6 +118,8 @@ app.post("/", function (req, res) {
       let Neworder = new Order({
         orders: req.body.order,
         user: req.body.orderByUser,
+        comment: req.body.orderComment,
+        contact: req.body.orderContact,
         price: req.body.orderTotal,
       });
       Neworder.save();
