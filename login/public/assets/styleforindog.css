@@ -7,7 +7,7 @@ body * {
 }
 
 .header {
-  background-color: #327a81;
+  background-color: #c77055;
   color: white;
   font-size: 1.5em;
   padding: 1rem;
@@ -22,7 +22,7 @@ img {
 }
 
 .table-users {
-  border: 1px solid #327a81;
+  border: 1px solid #44043d;
   border-radius: 10px;
   box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
   max-width: calc(100% - 2em);
@@ -48,14 +48,14 @@ table td:last-child {
   text-align: center;
 }
 table th {
-  background-color: #daeff1;
+  background-color: #fdb883;
   font-weight: 300;
 }
 table tr:nth-child(2n) {
   background-color: white;
 }
 table tr:nth-child(2n+1) {
-  background-color: #edf7f8;
+  background-color: #ffe0c8;
 }
 
 @media screen and (max-width: 700px) {
