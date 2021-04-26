@@ -38,7 +38,7 @@ app.component("rice", {
   
   
           <button 
-            class="button" 
+            class="button-add" 
             :class="{ disabledButton: !inStock }" 
             :disabled="!inStock" 
             v-on:click="addToCart"
@@ -48,7 +48,7 @@ app.component("rice", {
   
           <!-- solution -->
           <button 
-          class="button" 
+          class="button-re" 
           :class="{ disabledButton: !inStock }" 
           :disabled="!inStock" 
           @click="removeFromCart"
@@ -64,7 +64,7 @@ app.component("rice", {
   data() {
     return {
       product: "rice",
-      brand: "menu",
+      brand: "Menu",
       selectedVariant: 0,
       variants: [
         {

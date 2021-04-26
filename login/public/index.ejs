@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>sale food ja</title>
+    <title>Sale food ja</title>
     <!-- Import Styles -->
     <link rel="stylesheet" href="/assets/styles.css" />
     <!-- Import Vue.js -->
@@ -21,17 +21,18 @@
   </head>
   <body>
     <nav>
+
       <h1 style="float: right; margin-right: 10%"><%= id %></h1>
       <br />
       <br />
       <br />
+      <center><p style="font-size:80px; ">ยินดีต้อนรับ</p></center>
       <br />
-      <br />
-      <br />
+      
     </nav>
     <div id="app">
       <center>
-        <img src="/assets/images/hh.jpg" style="margin-left: 8%" />
+        <img src="/assets/images/hh.jpg" style="margin-left: 8%; height:500px;width:1200px;" />
       </center>
 
       <bubletea
@@ -90,8 +91,8 @@
           </div>
           <br />
           <h4>
-            <div style="float: left">รวม</div>
-            <div style="float: right">{{ sum }}</div>
+            <div style="float: left">รวม : </div>
+            <div style="float: right"> :  {{ sum }}</div>
           </h4>
         </div>
 
@@ -101,19 +102,11 @@
           <input type="hidden" name="order" :value="toStr" />
           <input type="hidden" name="orderTotal" :value="getsum" />
           <input type="hidden" name="orderByUser" value="<%= id %>" />
-          <div style="width: 400px">
-            <h3>เบอร์โทร</h3>
-            <input type="tel" name="orderContact" />
-            <h3>รายละเอียดเพิ่มเติม</h3>
-            <input type="text" name="orderComment" />
-          </div>
-          <br />
           <button
             type="submit"
             name="addToDB"
             value="addToDB"
             class="btn btn-success"
-            :disabled="cart.length > 0 ?disabled  :'' "
           >
             Success
           </button>
