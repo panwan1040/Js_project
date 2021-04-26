@@ -15,7 +15,7 @@ app.component("rice", {
         <div class="product-info">
           <h1>{{ title }}</h1>
   
-          <p v-if="inStock">{{ shipping }}</p>
+          <p v-if="inStock">สั่งเลย!!</p>
           <p v-else>วัตถุดิบหมดจ้า</p>
   
           <p>เมนู : {{ shipping }}</p>
