@@ -19,7 +19,7 @@ app.component("rice", {
           <p v-else>วัตถุดิบหมดจ้า</p>
   
           <p>เมนู : {{ shipping }}</p>
-          <p>ราคา : {{ pr }}</p>
+          <p>ราคา : {{ pr }} บาท</p>
           
   
         <table>
