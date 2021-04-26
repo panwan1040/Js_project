@@ -42,19 +42,20 @@
         <!-- test -->
 
     <nav>
-      <br />
-       <h1  style="float: right; margin-right: 10%;color:white">สวัสดีคุณ  <%= id %></h1>
-      <br />
+      <br />  
+      <h1  style="float: right; margin-right: 10%;color:white">สวัสดีคุณ  <%= id %></h1>
+      <br/>
+      <div class="frame">
+        <button style=" margin-right: 7%;" class="custom-btn btn-11">logout<div class="dot"></div></button>
+      </div>
     </nav>
     <div id="app">
       <center>
-      <br />
-       
-      <br />
+
     </nav>
     <div id="app">
       <center>
-        <img src="/assets/images/hh.jpg" style="margin-left: 8%; height:500px;width:1200px;width: 70%;" />
+        <img src="/assets/images/hh.jpg" style="height:500px;width:1200px;width: 70%;" />
       </center>
       <center>
         <div class="contente">
@@ -68,6 +69,7 @@
             </center>
 
       <bubletea
+      
         :stocker="stocker"
         @add-to-cart="updateCart"
         @remove-from-cart="removeById"
@@ -147,7 +149,8 @@
             type="submit"
             name="addToDB"
             value="addToDB"
-            class="btn btn-success"
+            class="go" 
+            class="custom-btn btn-11" 
             :disabled="cart.length > 0 ?disabled  :'' "
           >
             Success

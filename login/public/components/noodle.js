@@ -7,12 +7,16 @@ app.component("noodle", {
   },
   template:
     /*html*/
-    `<div class="product-display">
+    
+    `
+    <div class="product-display">
       <div class="product-container">
         <div class="product-image">
           <img v-bind:src="image">
         </div>
         <div class="product-info">
+        <br/>
+      <br/>
           <h1>{{ title }}</h1>
   
           <p v-if="inStock">สั่งเลย!!</p>
@@ -26,7 +30,6 @@ app.component("noodle", {
         <tr>
         <td v-for="(variant, index) in variants">
           <div 
-             
             :key="variant.id" 
             @mouseover="updateVariant(index)" 
             class="color-circle" 
@@ -38,7 +41,8 @@ app.component("noodle", {
   
   
           <button 
-            class="button-add" 
+          class="he"
+            class="custom-btn btn-11" 
             :class="{ disabledButton: !inStock }" 
             :disabled="!inStock" 
             v-on:click="addToCart"
@@ -48,7 +52,9 @@ app.component("noodle", {
   
           <!-- solution -->
           <button 
-          class="button-re" 
+          class="red"
+          class="he"
+          class="custom-btn btn-11" 
           :class="{ disabledButton: !inStock }" 
           :disabled="!inStock" 
           @click="removeFromCart"

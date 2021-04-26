@@ -13,6 +13,8 @@ app.component("rice", {
           <img v-bind:src="image">
         </div>
         <div class="product-info">
+        <br/>
+      <br/>
           <h1>{{ title }}</h1>
   
           <p v-if="inStock">สั่งเลย!!</p>
@@ -38,7 +40,8 @@ app.component("rice", {
   
   
           <button 
-            class="button-add" 
+          class="he"
+          class="custom-btn btn-11" 
             :class="{ disabledButton: !inStock }" 
             :disabled="!inStock" 
             v-on:click="addToCart"
@@ -48,7 +51,9 @@ app.component("rice", {
   
           <!-- solution -->
           <button 
-          class="button-re" 
+          class="red"
+          class="he"
+          class="custom-btn btn-11" 
           :class="{ disabledButton: !inStock }" 
           :disabled="!inStock" 
           @click="removeFromCart"

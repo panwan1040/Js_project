@@ -232,13 +232,13 @@ table tr:nth-child(2n+1) {
   position: absolute;
   bottom: 0;
   left: 0;
-  background: #015871;
+ 
 }
 
 .wave {
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
   position: absolute;
-  top: -198px;
+  top: -68px;
   width: 6400px;
   height: 198px;
   -webkit-animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
@@ -247,7 +247,7 @@ table tr:nth-child(2n+1) {
 }
 
 .wave:nth-of-type(2) {
-  top: -175px;
+  
   -webkit-animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite;
           animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite;
   opacity: 1;
@@ -287,3 +287,14 @@ table tr:nth-child(2n+1) {
   }
 }
 /* bg */
+.cart2 {
+
+  margin: 25px 100px;
+  border: 1px solid #d8d8d8;
+  padding: 30px 30px;
+  background-color: white;
+  -webkit-box-shadow: 0px 2px 15px -12px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 2px 15px -12px rgba(0, 0, 0, 0.57);
+  box-shadow: 2px 15px -12px rgba(0, 0, 0, 0.57);
+  border-radius: 5px;
+}
