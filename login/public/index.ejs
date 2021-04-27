@@ -46,7 +46,14 @@
       <h1  style="float: right; margin-right: 10%;color:white">สวัสดีคุณ  <%= id %></h1>
       <br/>
       <div class="frame">
-        <button style=" margin-right: 7%;" class="custom-btn btn-11">logout<div class="dot"></div></button>
+        <form action="/" method="POST">
+          <input type="hidden" name="logout" value="logout">
+          <button style=" margin-right: 7%;" 
+          class="custom-btn btn-11">
+            logout
+            <div class="dot"></div></button>
+        </form>
+      
       </div>
     </nav>
     <div id="app">

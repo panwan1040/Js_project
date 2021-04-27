@@ -35,13 +35,9 @@ let url = "/login.html";
 let id = "";
 let checker = ""; // for check username in mongodb - for register
 
-// app.get("/confrim", function (req, res) {
-
-//   res.redirect("/");
-// });
-
 app.get("/", function (req, res) {
   // console.log("xxxxxxxxxxxxxxxxxxxx" + req.body.regis + "ss");
+
   if (req.body.regis) {
     url = "/regis.ejs";
     console.log("regis");
@@ -57,6 +53,7 @@ app.post("/", function (req, res) {
   if (req.body.regis) {
     url = "/regis.ejs";
   }
+
   // จากล็อกอินฟอร์ม
   //////////////////////////////
   //for register
@@ -106,9 +103,19 @@ app.post("/", function (req, res) {
     }
   } else {
     //if (url == "/login.html")
-    console.log(req.body.addToDB);
+    ////
 
-    if (req.body.addToDB) {
+    if (req.body.logout) {
+      console.log("logout __>" + req.body.logout);
+      console.log("reset");
+      let url = "/login.html";
+      let id = "";
+      let checker = "";
+      res.render(__dirname + url, { id: id, checker: checker });
+
+      ///
+    } else if (req.body.addToDB) {
+      // console.log(req.body.addToDB);
       console.log("can");
       console.log(req.body.order);
       console.log(req.body.orderByUser);
